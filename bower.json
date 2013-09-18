@@ -1,12 +1,18 @@
 {
   "name": "fireside",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": [
+    "./dist/firebase.js"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "yepnope": "~1.5.4",
+    "angular-fire": "~0.3.1"
+  }
 }
