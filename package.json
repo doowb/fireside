@@ -1,0 +1,25 @@
+{
+  "name": "fireside",
+  "version": "0.0.0",
+  "description": "NoBackend required comment system built with AngularJS and Firebase.",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doowb/fireside.git"
+  },
+  "keywords": [
+    "firebase",
+    "comments",
+    "angular",
+    "angularjs",
+    "nobackend"
+  ],
+  "author": "Brian Woodward",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doowb/fireside/issues"
+  }
+}
