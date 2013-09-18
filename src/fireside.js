@@ -1,14 +1,20 @@
 (function() {
 
+  window.fireside = window.fireside || { baseUrl: './' };
+  console.log(fireside);
+
   function init() {
     yepnope([
       { test: window.Firebase, nope: ['http://static.firebase.com/v0/firebase.js'] },
-      { test: window.FirebaseSimpleLogin, nope: ['https://cdn.firebase.com/v0/firebase-simple-login.js'], complete: complete }
+      { test: window.FirebaseSimpleLogin, nope: ['https://cdn.firebase.com/v0/firebase-simple-login.js'] },
+      { test: window.angular, nope: ['https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js'] },
+      { test: window.firesideApp, nope: [fireside.baseUrl + 'app.js'], complete: complete }
     ]);
   }
 
   function complete() {
-    console.log('Firebase loaded...');
+    console.log('Dependencies loaded...');
+    angular.bootstrap(document, ['firesideApp']);
   }
 
   var script = document.createElement('script');
