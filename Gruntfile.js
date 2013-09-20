@@ -54,6 +54,19 @@ module.exports = function(grunt) {
         src: ['lib/**/*.js', 'test/**/*.js']
       }
     },
+
+    ngtemplates: {
+      app: {
+        cwd: 'src',
+        src: 'templates/**.html',
+        dest: 'src/templates.js',
+        options: {
+          module: 'fireside.app',
+          url: function(url) { return url.replace('.html', ''); }
+        }
+      }
+    },
+
     nodeunit: {
       files: ['test/**/*_test.js']
     },
@@ -75,8 +88,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-angular-templates');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'nodeunit', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'ngtemplates']);
 
 };
