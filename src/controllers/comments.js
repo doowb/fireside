@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fireside.app').
-controller('CommentController', ['$scope', 'angularFire',
+controller('CommentsController', ['$scope', 'angularFire',
   function($scope, angularFire) {
     console.log('comment controller');
     $scope.comments = [];

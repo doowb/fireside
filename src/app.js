@@ -6,6 +6,10 @@ config(['$locationProvider',
   function($locationProvider) {
     $locationProvider.html5Mode(true);
   }]).
-run(function() {
-  console.log('running app');
-});
+run(['$rootScope', '$compile',
+  function($rootScope, $compile) {
+    console.log('running app');
+    var html = angular.element(fireside.config.container).html();
+    angular.element(fireside.config.container).html($compile(html)($rootScope));
+    $rootScope.$apply();
+  }]);

@@ -1,7 +1,7 @@
 angular.module('fireside.app').run(['$templateCache', function($templateCache) {
 
   $templateCache.put('templates/main',
-    "<div class=\"well\" ng-controller=\"CommentController\">\n" +
+    "<div class=\"well\" ng-controller=\"CommentsController\">\n" +
     "  <form class=\"form-inline\">\n" +
     "    Your name: <input type=\"text\" ng-model=\"username\">\n" +
     "  </form>\n" +
